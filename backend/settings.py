@@ -1,16 +1,10 @@
 from pathlib import Path
 
-# Base directory
 BASE_DIR = Path(__file__).resolve().parent.parent
-
-# ✅ HARD-CODED SECRET KEY (OK for assessment & local dev)
 SECRET_KEY = "django-insecure-spotter-assignment-local-dev-key"
-
 DEBUG = True
 
 ALLOWED_HOSTS = []
-
-# ✅ REQUIRED APPS (admin INCLUDED to avoid crashes)
 INSTALLED_APPS = [
     "django.contrib.admin",
     "django.contrib.auth",
@@ -21,7 +15,6 @@ INSTALLED_APPS = [
 
     "api",
 ]
-
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
@@ -30,10 +23,7 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
 ]
-
 ROOT_URLCONF = "backend.urls"
-
-# ✅ Minimal templates config (required for admin/messages)
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
@@ -51,7 +41,6 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = "backend.wsgi.application"
-
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.sqlite3",
@@ -63,7 +52,5 @@ LANGUAGE_CODE = "en-us"
 TIME_ZONE = "UTC"
 USE_I18N = True
 USE_TZ = True
-
 STATIC_URL = "/static/"
-
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
